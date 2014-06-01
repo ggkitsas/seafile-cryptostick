@@ -1,0 +1,3 @@
+[submodule "libsearpc"]
+	path = libsearpc
+	url = https://github.com/haiwen/libsearpc
