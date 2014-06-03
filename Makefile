@@ -48,7 +48,7 @@ seafile:
 	make -j$(J) && \
 	make install
 
-seafile-client:
+seafile-client: 
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile-client && \
