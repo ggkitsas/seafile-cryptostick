@@ -6,7 +6,7 @@
 	url = https://github.com/haiwen/ccnet
 [submodule "seafile-client"]
 	path = seafile-client
-	url = https://github.com/haiwen/seafile-client
+	url = git@github.com:ggkitsas/seafile-client
 [submodule "seafile"]
 	path = seafile
 	url = git@github.com:ggkitsas/seafile.git
