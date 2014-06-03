@@ -4,6 +4,7 @@
 MY_PATH=`pwd`/build/
 
 export LD_LIBRARY_PATH=$MY_PATH/lib/:$LD_LIBRARY_PATH
+export PATH=$MY_PATH/bin/:$PATH
 
 if [ $1 = "applet" ]; then
 	$MY_PATH/bin/seafile-applet # Call gui seafile
