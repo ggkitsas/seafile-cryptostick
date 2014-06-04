@@ -24,7 +24,8 @@ fetch-modules:
 libsearpc:
 	cd libsearpc && \
 	./autogen.sh && \
-	sudo ./configure --prefix=$(PREFIX) && \
+	./configure --prefix=$(PREFIX) && \
+    cp $(PATCH_DIR)/searpc-marshal.h.libsearpc ./demo/searpc-marshal.h && \
 	make -j$(J) && \
 	make install
 
