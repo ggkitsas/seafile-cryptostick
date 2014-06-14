@@ -24,3 +24,6 @@
 
 # Archives
 *.tar*
+
+*tags
+
