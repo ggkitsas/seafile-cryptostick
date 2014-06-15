@@ -10,3 +10,6 @@
 [submodule "seafile"]
 	path = seafile
 	url = git@github.com:ggkitsas/seafile.git
+[submodule "seahub"]
+	path = seahub
+	url = git@github.com:ggkitsas/seahub.git
