@@ -53,8 +53,12 @@ seafile-client:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile-client && \
-	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(PREFIX) . && \
-	make -j$(J) && \
+	cmake -DCMAKE_BUILD_TYPE=Release \
+			-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
+			-DPCSCLITE_INCLUDE_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/include/PCSC \
+			-DPCSCLITE_LIBRARY_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/lib \
+			. && \
+	make VERBOSE=1 -j$(J) && \
 	make install
 
 all: libsearpc ccnet seafile seafile-client
