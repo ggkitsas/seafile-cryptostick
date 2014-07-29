@@ -38,13 +38,14 @@ ccnet:
 	cp $(PATCH_DIR)/searpc-marshal.h.ccnet ./lib/searpc-marshal.h && \
 	make -j$(J) && \
 	make install
-	
+
+PCSC_INC=-I/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/include/PCSC
 seafile:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile && \
 	./autogen.sh && \
-	./configure --prefix=$(PREFIX) && \
+	./configure --prefix=$(PREFIX) PCSCLITE_CFLAGS=$(PCSC_INC) PCSCLITE_LIBS=-lpcsclite && \
 	cp $(PATCH_DIR)/searpc-marshal.h.seafile ./lib/searpc-marshal.h && \
 	make -j$(J) && \
 	make install
