@@ -62,6 +62,9 @@ seafile-client:
 	make VERBOSE=1 -j$(J) && \
 	make install
 
+seafile-demo: seafile seafile-client
+	tar -zcf build.tar.gz build/ && cp build.tar.gz ~/Documents/gsoc/jan_shared_btsync/seafile-demo
+
 all: libsearpc ccnet seafile seafile-client
 
 
