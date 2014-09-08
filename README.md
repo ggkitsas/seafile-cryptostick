@@ -1,6 +1,6 @@
 seafile-cryptostick
 ===================
-Seafile with Crypto Stick support
+This feature allows users to encrypt their libraries with a Crypto Stick or OpenPGP Card device. In this case the AES library key is encrypted for the private RSA key stored securely on the device. Thus the user enjoys higher security while being able to access his encrypted library on any random computer where Seafile is installed. This feature is an option to the encryption with ordinary password and doesn't affect it in any way. Both options coexist smoothly.
 
 ### User Cases
 
