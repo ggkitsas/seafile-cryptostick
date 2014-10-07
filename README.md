@@ -1,5 +1,6 @@
-seafile-cryptostick
-===================
+Seafile integrated with smart card functionallity
+=================================================
+
 This feature allows users to encrypt their libraries with a [Crypto Stick](http://crypto-stick.com/) or [OpenPGP Card](http://g10code.com/p-card.html) device. In this case the AES library key is encrypted for the private RSA key stored securely on the device. Thus the user enjoys higher security while being able to access his encrypted library on any random computer where Seafile is installed. This feature is an option to the encryption with ordinary password and doesn't affect it in any way. Both options coexist smoothly.
 
 ### User Cases
@@ -7,34 +8,50 @@ This feature allows users to encrypt their libraries with a [Crypto Stick](http:
 #### Securing a library using Crypto Stick and OpenPGP Card
 * When creating a library enable "Encrypt with Crypto Stick" option.
 * Then choose a connected device from the dropdown menu
-   ![Creating a new smart-card secured lib](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card.png)
-* Enter device user PIN:
-   ![User PIN for creating](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card-user-pin.png)
+
+  ![Creating a new smart-card secured lib](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card.png)
+* Enter device user PIN
+
+  ![User PIN for creating](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card-user-pin.png)
 
 
 #### Syncing a library protected using a Crypto Stick and OpenPGP Card
 * At the 'sync library' dialog, enable 'Use registered Crypto Stick for this library'
-* Choose your device from the dropdown menu:
-   ![Syncing using a smart card device](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card.png)
+* Choose your device from the dropdown menu
+
+  ![Syncing using a smart card device](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card.png)
 * Enter device user PIN
 
-   ![User PIN when syncing](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card-user-pin.png)
+  ![User PIN when syncing](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card-user-pin.png)
 
 #### Using blank Crypto Stick and OpenPGP Card
-When you want to use a blank device you have two options:
+When using a blank device, you either have to generate new keys, or import keys from a backup file. The dialog responsible for these actions will pop-up automatically when you choose to use a blank device during creation or syncing of a library:
 
-1. Generate or Import an encryption key pair during the creation of a new library.
-   During the creation of a new library, if the selected device is blank, it is auto-detected.
-   A dialog will pop-up asking you to generate or import a key pair to the device.
-2. Generate or Import an encryption key pair from Settings.
+![Generate/Import keys](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/generate-import-key.png)
+
+To generate keys:
+* Choose key size
+* Optionally choose a file to backup your keys
+* Press OK
+
+To import keys from a file:
+* Just choose the key file and press OK
 
 
 #### Creating a backup device
-You can create a backup device from Settings. Alternatively you can create a backup, using a blank
-device when creating a new library and importing the key pair from your .keys file.
+A backup device is a different device (different serial number) which contains the same key material with your primary device.
+If you want to create a backup device using Seafile you must already have a key backup file of your primary device, and a second blank device. Then all you have to do is to use the blank device with Seafile and import the keys saved at the backup file. 
+TODO: This functionallity should be present at a Smart card managment dialog.
 
 
 ### Implementation
+
+### Near-future TODO's
+* Create a dialog to manage smart card devices
+  * Change user PIN
+  * Change admin PIN
+  * Import keys
+  * Generate and/or backup keys
 
 
 ### Future feature list
