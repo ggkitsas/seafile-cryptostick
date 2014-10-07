@@ -46,6 +46,20 @@ A backup device is a different device (different serial number) which contains t
 If you want to create a backup device using Seafile you must already have a key backup file of your primary device, and a second blank device. Then all you have to do is to use the blank device with Seafile and import the keys saved at the backup file. 
 
 
+#### Unblocking a smart card device
+When a blocked device is used, it is autodetected and a prompt to unblock it pops up:
+
+![Blocked device detected](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/device-blocked.png)
+
+Then the Admin PIN password is requested:
+
+![Admin PIN](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/admin-pin.png)
+
+And finally the user has to set up her new device user PIN:
+
+![New PIN](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/new-user-pin.png)
+
+
 ### Near-future TODO's
 * Create a dialog to manage smart card devices
   * Change user PIN
