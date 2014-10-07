@@ -44,10 +44,7 @@ You will then promted to insert the Admin PIN of the device:
 #### Creating a backup device
 A backup device is a different device (different serial number) which contains the same key material with your primary device.
 If you want to create a backup device using Seafile you must already have a key backup file of your primary device, and a second blank device. Then all you have to do is to use the blank device with Seafile and import the keys saved at the backup file. 
-TODO: This functionallity should be present at a Smart card managment dialog.
 
-
-### Implementation
 
 ### Near-future TODO's
 * Create a dialog to manage smart card devices
