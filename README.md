@@ -5,15 +5,20 @@ This feature allows users to encrypt their libraries with a [Crypto Stick](http:
 ### User Cases
 
 #### Securing a library using Crypto Stick and OpenPGP Card
-1. When creating a library enable "Encrypt with Crypto Stick" option.
-2. Then choose a connected device from the dropdown menu
-3. Enter device user PIN
+* When creating a library enable "Encrypt with Crypto Stick" option.
+* Then choose a connected device from the dropdown menu
+   ![Creating a new smart-card secured lib](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card.png)
+* Enter device user PIN:
+   ![User PIN for creating](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card-user-pin.png)
+
 
 #### Syncing a library protected using a Crypto Stick and OpenPGP Card
-1. At the 'sync library' dialog, enable 'Use registered Crypto Stick for this library'
-2. Choose your device from the dropdown menu
+* At the 'sync library' dialog, enable 'Use registered Crypto Stick for this library'
+* Choose your device from the dropdown menu:
+   ![Syncing using a smart card device](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card.png)
+* Enter device user PIN
 
-![Syncing using a Crypto Stick](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib.png)
+   ![User PIN when syncing](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/sync-lib-smart-card-user-pin.png)
 
 #### Using blank Crypto Stick and OpenPGP Card
 When you want to use a blank device you have two options:
