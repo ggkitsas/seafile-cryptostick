@@ -37,6 +37,9 @@ To generate keys:
 To import keys from a file:
 * Just choose the key file and press OK
 
+You will then promted to insert the Admin PIN of the device:
+
+![Admin PIN](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/gen-import-admin-pin.png)
 
 #### Creating a backup device
 A backup device is a different device (different serial number) which contains the same key material with your primary device.
