@@ -9,7 +9,7 @@ This feature allows users to encrypt their libraries with a [Crypto Stick](http:
 * When creating a library enable "Encrypt with Crypto Stick" option.
 * Then choose a connected device from the dropdown menu
    ![Creating a new smart-card secured lib](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card.png)
-* Enter device user PIN:
+* Enter device user PIN
    ![User PIN for creating](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/create-lib-smart-card-user-pin.png)
 
 
@@ -24,8 +24,6 @@ This feature allows users to encrypt their libraries with a [Crypto Stick](http:
 #### Using blank Crypto Stick and OpenPGP Card
 When using a blank device, you either have to generate new keys, or import keys from a backup file. The dialog responsible for these actions will pop-up automatically when you choose to use a blank device during creation or syncing of a library:
 
-
-From this dialog you can choose if you want to generate or import keys:
 ![Generate/Import keys](https://github.com/ggkitsas/seafile-cryptostick/blob/master/screenshots/generate-import-key.png)
 
 To generate keys:
