@@ -1,9 +1,11 @@
 Seafile integrated with smart card functionallity
 =================================================
 
-This feature allows users to encrypt their libraries with a [Crypto Stick](http://crypto-stick.com/) or [OpenPGP Card](http://g10code.com/p-card.html) device. In this case the AES library key is encrypted for the private RSA key stored securely on the device. Thus the user enjoys higher security while being able to access his encrypted library on any random computer where Seafile is installed. This feature is an option to the encryption with ordinary password and doesn't affect it in any way. Both options coexist smoothly.
+This feature allows users to encrypt their libraries with a [Crypto Stick](http://crypto-stick.com/) or [OpenPGP Card](http://g10code.com/p-card.html) device. In this case the AES library key is encrypted for the private RSA key stored securely on the device. Thus the user enjoys higher security while being able to access his encrypted library on any random computer where Seafile is installed. This feature is an alternative to the usage of an ordinary password and doesn't affect it in any way. Both options coexist smoothly.
 
-### User Cases
+For the communication with the smart card, no extra drivers are needed.
+
+### Functionallity
 
 #### Securing a library using Crypto Stick and OpenPGP Card
 * When creating a library enable "Encrypt with Crypto Stick" option.
