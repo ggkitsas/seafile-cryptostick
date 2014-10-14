@@ -76,6 +76,7 @@ For full and up-to-date feature list see this repo's issues marked as enchanceme
 * Using a device along with a password to protect a library
 * Registering more than one devices to an encrypted library
 * Registering a device using a backup file (usefull when sharing libraries)
+* Auto backup and sync storage contents of Crypto Stick Storage version
 
 ### File/Folder structure of this repository
 * ccnet:
