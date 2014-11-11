@@ -39,7 +39,7 @@ ccnet:
 	make -j$(J) && \
 	make install
 
-PCSC_INC=-I/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/include/PCSC
+PCSC_INC=-I/usr/include/PCSC
 seafile:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
@@ -56,8 +56,7 @@ seafile-client:
 	cd seafile-client && \
 	cmake -DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
-			-DPCSCLITE_INCLUDE_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/include/PCSC \
-			-DPCSCLITE_LIBRARY_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/lib \
+			-DPCSCLITE_INCLUDE_DIRS=/usr/include/PCSC \
 			. && \
 	make VERBOSE=1 -j$(J) && \
 	make install
