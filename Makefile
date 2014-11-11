@@ -50,6 +50,7 @@ seafile:
 	make -j$(J) && \
 	make install
 
+				#-DPCSCLITE_LIBRARY_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/lib 
 seafile-client: 
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
