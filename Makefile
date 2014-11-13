@@ -44,13 +44,13 @@ seafile:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile && \
+	make clean && make distclean && \
 	./autogen.sh && \
 	./configure --prefix=$(PREFIX) PCSCLITE_CFLAGS=$(PCSC_INC) PCSCLITE_LIBS=-lpcsclite && \
 	cp $(PATCH_DIR)/searpc-marshal.h.seafile ./lib/searpc-marshal.h && \
 	make -j$(J) && \
 	make install
 
-				#-DPCSCLITE_LIBRARY_DIRS=/home/cyc0/Projects/smartcards/pcsc-lite-1.8.11/build/lib 
 seafile-client: 
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
@@ -58,6 +58,7 @@ seafile-client:
 	cmake -DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
 			-DPCSCLITE_INCLUDE_DIRS=/usr/include/PCSC \
+			-DPCSCLITE_LIBRARY_DIRS=/usr/lib/x86_64-linux-gnu \
 			. && \
 	make VERBOSE=1 -j$(J) && \
 	make install
