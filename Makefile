@@ -1,5 +1,6 @@
 
 ROOTDIR= $(shell pwd)
+DEMODIR?=$(ROOTDIR)
 PATCH_DIR=$(ROOTDIR)/patches
 DEPS=autoconf automake libtool libcurl4-openssl-dev libevent-dev libgtk2.0-dev uuid-dev intltool libsqlite3-dev valac cmake libfuse-dev python-simplejson libjansson-dev
 EXTRA_DEPS= libqt4-dev
@@ -64,7 +65,7 @@ seafile-client:
 	make install
 
 seafile-demo: seafile seafile-client
-	tar -zcf build.tar.gz build/ && cp build.tar.gz ~/Documents/gsoc/jan_shared_btsync/seafile-demo
+	tar -zcf build.tar.gz build/ && cp build.tar.gz $(DEMODIR)
 
 all: libsearpc ccnet seafile seafile-client
 
