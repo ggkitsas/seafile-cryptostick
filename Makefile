@@ -33,8 +33,10 @@ libsearpc:
 ccnet:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
-	cd ccnet && \
-	./autogen.sh && \
+	cd ccnet; \
+	libtoolize;  \
+	./autogen.sh; \
+	automake --add-missing; \
 	./configure --prefix=$(PREFIX) && \
 	cp $(PATCH_DIR)/searpc-marshal.h.ccnet ./lib/searpc-marshal.h && \
 	make -j$(J) && \
@@ -72,9 +74,10 @@ seafile-mac:
 	export ZLIB_CFLAGS='/usr' && \
 	export LDFLAGS="-L/opt/local/lib -Xlinker -headerpad_max_install_names -framework CoreServices -framework PCSC" && \
 	cd seafile; \
+	libtoolize; \
 	make clean; make distclean; \
 	./autogen.sh && \
-	./configure --prefix=$(PREFIX) PCSCLITE_CFLAGS=$(PCSC_INC) PCSCLITE_LIBS=-lpcsclite && \
+	./configure --prefix=$(PREFIX) && \
 	cp $(PATCH_DIR)/searpc-marshal.h.seafile ./lib/searpc-marshal.h && \
 	make -j$(J) && \
 	make install
