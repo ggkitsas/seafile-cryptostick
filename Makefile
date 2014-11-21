@@ -52,7 +52,7 @@ seafile:
 	make -j$(J) && \
 	make install
 
-seafile-client: 
+seafile-client:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile-client && \
@@ -60,6 +60,32 @@ seafile-client:
 			-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
 			-DPCSCLITE_INCLUDE_DIRS=/usr/include/PCSC \
 			-DPCSCLITE_LIBRARY_DIRS=/usr/lib/x86_64-linux-gnu \
+			. && \
+	make VERBOSE=1 -j$(J) && \
+	make install
+
+
+seafile-mac:
+	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
+	export PATH="$(PREFIX)/bin:$(PATH)" && \
+	export ZLIB_LIBS='/usr/lib/libz.dylib' && \
+	export ZLIB_CFLAGS='/usr' && \
+	export LDFLAGS="-L/opt/local/lib -Xlinker -headerpad_max_install_names -framework CoreServices -framework PCSC" && \
+	cd seafile; \
+	make clean; make distclean; \
+	./autogen.sh && \
+	./configure --prefix=$(PREFIX) PCSCLITE_CFLAGS=$(PCSC_INC) PCSCLITE_LIBS=-lpcsclite && \
+	cp $(PATCH_DIR)/searpc-marshal.h.seafile ./lib/searpc-marshal.h && \
+	make -j$(J) && \
+	make install
+
+seafile-client-mac:
+	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
+	export PATH="$(PREFIX)/bin:$(PATH)" && \
+	cd seafile-client && \
+	cmake -DCMAKE_BUILD_TYPE=Release \
+			-DCMAKE_INSTALL_PREFIX=$(PREFIX) \
+			-framework PCSC \
 			. && \
 	make VERBOSE=1 -j$(J) && \
 	make install
