@@ -10,7 +10,7 @@ PREFIX?=$(ROOTDIR)/build
 export PKG_CONFIG_PATH "$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)"
 export PATH "$(PREFIX)/bin:$(PATH)" 
 
-.PHONY: libsearpc ccnet seafile seafile-client
+.PHONY: libsearpc ccnet seafile seafile-client seafile-mac seafile-client-mac
 
 setup: install-deps fetch-modules
 
@@ -97,5 +97,5 @@ seafile-demo: seafile seafile-client
 	tar -zcf build.tar.gz build/ && cp build.tar.gz $(DEMODIR)
 
 all: libsearpc ccnet seafile seafile-client
-
+all-mac: libsearpc ccnet seafile-mac seafile-client-mac
 
