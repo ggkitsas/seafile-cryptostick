@@ -47,7 +47,7 @@ seafile:
 	export PKG_CONFIG_PATH="$(PREFIX)/lib/pkgconfig:$(PKG_CONFIG_PATH)" && \
 	export PATH="$(PREFIX)/bin:$(PATH)" && \
 	cd seafile && \
-	make clean && make distclean && \
+	make clean && make distclean || true && \
 	./autogen.sh && \
 	./configure --prefix=$(PREFIX) PCSCLITE_CFLAGS=$(PCSC_INC) PCSCLITE_LIBS=-lpcsclite && \
 	cp $(PATCH_DIR)/searpc-marshal.h.seafile ./lib/searpc-marshal.h && \
